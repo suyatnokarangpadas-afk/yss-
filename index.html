@@ -2,171 +2,299 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Game Tebak Bangun</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yayasan Syech Subakir</title>
+
 <style>
-    body {
-        background: #020617;
-        color: white;
-        font-family: Arial;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    }
-    .game {
-        background: #0f172a;
-        padding: 20px;
-        border-radius: 12px;
-        width: 380px;
-        text-align: center;
-        box-shadow: 0 0 15px #38bdf8;
-    }
-    h1 {
-        color: #38bdf8;
-    }
-    .gambar {
-        font-size: 70px;
-        margin: 10px 0;
-    }
-    .soal {
-        margin: 10px 0;
-        font-size: 18px;
-    }
-    button {
-        width: 100%;
-        margin: 5px 0;
-        padding: 10px;
-        border: none;
-        border-radius: 6px;
-        font-size: 16px;
-        cursor: pointer;
-        background: #1e293b;
-        color: white;
-    }
-    button:hover {
-        background: #38bdf8;
-        color: black;
-    }
+*{box-sizing:border-box;font-family:Arial,sans-serif;scroll-behavior:smooth}
+body{margin:0;background:#f4f6f8}
+
+nav{
+    background:linear-gradient(200deg,#3ca03d,#98cf98);
+    padding:14px 10px;
+    text-align:center;
+}
+.logo{
+    max-width:220px;
+    display:block;
+    margin:0 auto 8px;
+}
+nav a{
+    color:#fff;
+    margin:0 12px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+header{
+    background:linear-gradient(100deg,#98cf98,#3ca03d);
+    color:#fff;
+    text-align:center;
+    padding:55px 20px;
+}
+
+section{padding:40px 20px}
+.title{text-align:center;color:#484d4a;margin-bottom:25px}
+
+.card{
+    max-width:900px;
+    margin:auto;
+    background:#fff;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0, 0, 0, 0.1);
+    margin-bottom:30px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.program{
+    background:#e7ebe7;
+    padding:18px;
+    border-radius:12px;
+}
+.program img{
+    width:100%;
+    height:160px;
+    object-fit:cover;
+    border-radius:10px;
+    margin-top:12px;
+}
+
+.donasi-box{
+    background:#d4dcd5;
+    max-width:420px;
+    margin:auto;
+    padding:20px;
+    border-radius:16px;
+    box-shadow:0 15px 35px rgba(0,0,0,.2);
+}
+input,button{
+    width:100%;
+    padding:14px;
+    font-size:16px;
+    border-radius:10px;
+    border:1px solid #ddd;
+    margin-bottom:12px;
+}
+button{border:none;cursor:pointer}
+.btn-donasi{background:#23ce40;color:#fff}
+.btn-qris{background:#f39c12;color:#fff}
+.btn-ewallet{background:#ff5f57;color:#fff}
+.btn-wa{background:#25D366;color:#fff}
+.hidden{display:none}
+
+#qrisBox img{
+    width:100%;
+    max-width:260px;
+    display:block;
+    margin:auto;
+}
+
+footer{
+    background:#b9c3b9;
+    color:#fff;
+    text-align:center;
+    padding:15px;
+}
 </style>
 </head>
+
 <body>
 
-<div class="game">
-    <h1>🧠 Tebak Bangun</h1>
+<nav>
+    <img src="d:\a YAYASAN\LOGO YAYASAN\LOGO-YSS.PNG.png" class="logo">
+    <a href="#home">Home</a>
+    <a href="#tentang">Tentang</a>
+    <a href="#program">Program</a>
+    <a href="#donasi">Donasi</a>
+</nav>
 
-    <div class="gambar" id="gambar">⬜</div>
+<header id="home">
+<h2>Satu Hati Sejuta Peduli</h2>
+<h3>Email: yss.tasikharjo@gmail.com - Telp.085232806202</h3>
+</header>
+<section id="tentang">
+<h2 class="title">Sejarah Yayasan</h2>
+<div class="card">
+Yayasan Syech Subakir di dirikan pada tahum 2015
+yang awalnya sebuah organisasi amal yang bergerak dalam kegiatan santunan anak yatim dan Dhuafa
+yang kemudian pada Tahun 2016 menjadi sebuah yayasan dengan AKTA NOTARIS NURUL FITRIA.SH.M.kn 
+No.173 Tanggal 28 April 2016 dan SK KEMENKUMHAM RI NOMOR AHU:0023582.AH.01.04.Tahun 2016
 
-    <div class="soal" id="soal">---</div>
-
-    <div id="opsi"></div>
-
-    <p>⭐ Skor: <span id="skor">0</span></p>
+</div>
+<h2 class="title">Visi & Misi</h2>
+<div class="card grid">
+<div>
+<b>Visi</b>
+<p>Mewujudkan lembaga sosial yang berperan aktif dalam kesejahteraan sosial bagi seluruh rakyat indonesia</p>
+</div>
+<div>
+<b>Misi</b>
+<ul>
+<li>menjembatani tali silaturrahim antara donatur dengan anak yatim</li>
+<li>membantu meningkatkan kesejahteraan generasi bangsa melalui pendidikan dan ekonomi</li>
+<li>Mewujudkan generasi yang mandiri</li>
+</ul>
+</div>
 </div>
 
+<h2 class="title">Struktur Pengurus</h2>
+<div class="card">
+Pembina         : H.M.Hilal Asyari S.H, H.Sumardi, Ustd. Marwan</br> 
+Penasehat       : Damuri, Sumaji, joko Lesmono, Tutik lis setiawati
+Ketua Umum      : Suyatno<br>
+Ketua           : Hudi Utomo<br>
+Sekretaris Umum : Ali Said<br>
+Sekretaris      : Siti Nur Choiyimah<br>
+Bendahara Umum  : Susi Wahyuni S.Pd<br>
+Bendahara       : Suti'ah<br>
+</div>
+
+<h2 class="title">Legalitas</h2>
+<div class="card">
+SK KEMENKUMHAM RI No. AHU:0023582.AH.01.04.Tahun 2016 <br>
+Akta Notaris NURUL FITRIA.SH.M.kn No.173 Tanggal 28 April 2016 <br>
+NPWP: 76.198.975.5-648.000  
+</div>
+
+<section id="program">
+<h2 class="title">Program & Kegiatan</h2>
+
+<div class="card grid">
+
+    <div class="program">
+        <b>Santunan Yatim</b>
+        <p>Target: 30 Anak</p>
+        <p>Dana: Rp 6.000.000</p>
+        <img src="d:\a YAYASAN\DATA SANTUNAN\SANTUNAN .e\Santunan Feb 26.jpg">
+        <img src="d:\a YAYASAN\Photo YSS-OASYS.Dok\YATIM\DSC02307.JPG">
+        <img src="d:\a YAYASAN\Photo YSS-OASYS.Dok\YATIM\IMG20160214102653_1.jpg">
+    </div>
+
+    <div class="program">
+        <b>Bantuan Pendidikan</b>
+        <p>Target: 20 Siswa</p>
+        <p>Dana: Rp 5.000.000</p>
+        <img src="d:\a YAYASAN\DATA SANTUNAN\SANTUNAN .e\YSS Bayar beasiswa TK.jpeg">
+        <img src="d:\a YAYASAN\DATA SANTUNAN\SANTUNAN .e\YSS beasiswa KB.jpeg">
+        <img src="img/bantuan-pendidikan.jpg">
+    </div>
+
+    <div class="program">
+        <b>Bantuan Sosial</b>
+        <p>Target: 60 KK</p>
+        <p>Dana: Rp 9.000.000</p>
+        <img src="d:\a YAYASAN\Photo YSS-OASYS.Dok\FAKIR MISKIN\DSC01522.JPG">
+        <img src="d:\a YAYASAN\Photo YSS-OASYS.Dok\FAKIR MISKIN\DSC02235.JPG">
+        <img src="d:\a YAYASAN\Photo YSS-OASYS.Dok\FAKIR MISKIN\DSC02211.JPG">
+    </div>
+
+</div>
+</section>
+
+<section id="no bank"> 
+  <h3 class="title">No Rekening Yayasan </h3>
+     <h3 class="title">BNI:0684946935</h3> 
+  
+   </section>
+
+<section id="donasi">
+<h2 class="title">Donasi Sekarang</h2>
+
+<div class="donasi-box">
+<input type="number" id="nominalInput" placeholder="Contoh: 50000">
+
+<button class="btn-donasi" onclick="lanjut()">Lanjutkan</button>
+
+<div id="metode" class="hidden">
+    <button class="btn-qris" onclick="tampilQRIS()">Bayar via QRIS</button>
+    <button class="btn-ewallet" onclick="tampilEwallet()">Bayar via E-Wallet</button>
+    <button class="btn-wa" onclick="chatAdmin()">Chat Admin</button>
+</div>
+
+<div id="ewalletOptions" class="hidden">
+    <button class="btn-ewallet" onclick="bayarEwallet('Dana')">Dana</button>
+    <button class="btn-ewallet" onclick="bayarEwallet('GoPay')">GoPay</button>
+    <button class="btn-ewallet" onclick="bayarEwallet('ShopeePay')">ShopeePay</button>
+</div>
+
+<div id="qrisBox" class="hidden">
+    <h3 id="nominalText"></h3>
+    <img src="img/qris-yayasan.png">
+    <p>Scan QRIS menggunakan e-wallet / m-banking</p>
+</div>
+</div>
+</section>
+   
+      
+    
+<footer>
+© 2026 Yayasan Syech Subakir
+</footer>
+
 <script>
-const soalData = [
-    // KUBUS
-    {
-        gambar: "🧊",
-        soal: "Jumlah rusuk kubus adalah...",
-        jawaban: "12",
-        opsi: ["6", "8", "12"]
-    },
-    {
-        gambar: "🧊",
-        soal: "Rumus luas permukaan kubus adalah...",
-        jawaban: "6 × s²",
-        opsi: ["s³", "6 × s²", "4 × s²"]
-    },
+let waAdmin="6285232806202";
+let nominal=0;
 
-    // SEGITIGA
-    {
-        gambar: "🔺",
-        soal: "Rumus luas segitiga adalah...",
-        jawaban: "½ × a × t",
-        opsi: ["a × t", "½ × a × t", "a + b + c"]
-    },
-    {
-        gambar: "🔺",
-        soal: "Jumlah sisi segitiga adalah...",
-        jawaban: "3",
-        opsi: ["2", "3", "4"]
-    },
-
-    // PERSEGI PANJANG
-    {
-        gambar: "▭",
-        soal: "Rumus luas persegi panjang adalah...",
-        jawaban: "p × l",
-        opsi: ["2(p + l)", "p × l", "s²"]
-    },
-    {
-        gambar: "▭",
-        soal: "Rumus keliling persegi panjang adalah...",
-        jawaban: "2(p + l)",
-        opsi: ["p × l", "4s", "2(p + l)"]
-    },
-
-    // LAYANG-LAYANG
-    {
-        gambar: "♦",
-        soal: "Rumus luas layang-layang adalah...",
-        jawaban: "½ × d₁ × d₂",
-        opsi: ["s²", "½ × d₁ × d₂", "a × t"]
-    },
-    {
-        gambar: "♦",
-        soal: "Jumlah sisi layang-layang adalah...",
-        jawaban: "4",
-        opsi: ["3", "4", "5"]
-    },
-
-    // BELAH KETUPAT
-    {
-        gambar: "🔷",
-        soal: "Rumus luas belah ketupat adalah...",
-        jawaban: "½ × d₁ × d₂",
-        opsi: ["s²", "½ × d₁ × d₂", "p × l"]
-    },
-    {
-        gambar: "🔷",
-        soal: "Jumlah sisi belah ketupat adalah...",
-        jawaban: "4",
-        opsi: ["4", "6", "8"]
-    }
-];
-
-let skor = 0;
-let soalSekarang;
-
-function tampilSoal() {
-    soalSekarang = soalData[Math.floor(Math.random() * soalData.length)];
-
-    document.getElementById("gambar").innerText = soalSekarang.gambar;
-    document.getElementById("soal").innerText = soalSekarang.soal;
-
-    let opsiHTML = "";
-    soalSekarang.opsi.forEach(o => {
-        opsiHTML += `<button onclick="cekJawaban('${o}')">${o}</button>`;
-    });
-    document.getElementById("opsi").innerHTML = opsiHTML;
+function resetBox(){
+    qrisBox.classList.add("hidden");
+    ewalletOptions.classList.add("hidden");
 }
 
-function cekJawaban(pilihan) {
-    if (pilihan === soalSekarang.jawaban) {
-        skor++;
-        document.getElementById("skor").innerText = skor;
-        tampilSoal();
-    } else {
-        alert("❌ Salah!\nSkor kamu: " + skor);
-        skor = 0;
-        document.getElementById("skor").innerText = skor;
-        tampilSoal();
+function lanjut(){
+    nominal=nominalInput.value;
+    if(nominal<1000){
+        alert("Minimal Rp 1.000");
+        return;
     }
+    metode.classList.remove("hidden");
 }
 
-tampilSoal();
+function tampilQRIS(){
+    resetBox();
+    qrisBox.classList.remove("hidden");
+    nominalText.innerText="Donasi Rp "+Number(nominal).toLocaleString("id-ID");
+}
+
+function tampilEwallet(){
+    resetBox();
+    ewalletOptions.classList.remove("hidden");
+}
+
+function bayarEwallet(wallet){
+
+    let link = "";
+
+    if(wallet=="Dana"){
+        link = "https://link.dana.id/qr/IDQR085232806202";
+ }
+    else if(wallet=="GoPay"){
+        link = "https://gopay.co.id/qr/085232806202";
+    }
+    else if(wallet=="ShopeePay"){
+        link = "https://shopeepay.co.id/qr/085232806202";
+    }
+
+    window.location.href = link;
+
+    setTimeout(()=>{
+        let pesan = `Assalamu'alaikum, saya ingin berdonasi Rp ${Number(nominal).toLocaleString("id-ID")} melalui ${wallet}`;
+        window.open(`https://wa.me/${waAdmin}?text=${encodeURIComponent(pesan)}`);
+    }, 1500);
+}
+
+function chatAdmin(){
+    let pesan=`Assalamu'alaikum, saya ingin berdonasi Rp ${Number(nominal).toLocaleString("id-ID")}`;
+    window.open(`https://wa.me/${waAdmin}?text=${encodeURIComponent(pesan)}`);
+}
 </script>
+
 
 </body>
 </html>
+ 
