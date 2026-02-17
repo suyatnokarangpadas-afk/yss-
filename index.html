@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Game Tebak Bangun</title>
+<style>
+    body {
+        background: #020617;
+        color: white;
+        font-family: Arial;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .game {
+        background: #0f172a;
+        padding: 20px;
+        border-radius: 12px;
+        width: 380px;
+        text-align: center;
+        box-shadow: 0 0 15px #38bdf8;
+    }
+    h1 {
+        color: #38bdf8;
+    }
+    .gambar {
+        font-size: 70px;
+        margin: 10px 0;
+    }
+    .soal {
+        margin: 10px 0;
+        font-size: 18px;
+    }
+    button {
+        width: 100%;
+        margin: 5px 0;
+        padding: 10px;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+        background: #1e293b;
+        color: white;
+    }
+    button:hover {
+        background: #38bdf8;
+        color: black;
+    }
+</style>
+</head>
+<body>
+
+<div class="game">
+    <h1>🧠 Tebak Bangun</h1>
+
+    <div class="gambar" id="gambar">⬜</div>
+
+    <div class="soal" id="soal">---</div>
+
+    <div id="opsi"></div>
+
+    <p>⭐ Skor: <span id="skor">0</span></p>
+</div>
+
+<script>
+const soalData = [
+    // KUBUS
+    {
+        gambar: "🧊",
+        soal: "Jumlah rusuk kubus adalah...",
+        jawaban: "12",
+        opsi: ["6", "8", "12"]
+    },
+    {
+        gambar: "🧊",
+        soal: "Rumus luas permukaan kubus adalah...",
+        jawaban: "6 × s²",
+        opsi: ["s³", "6 × s²", "4 × s²"]
+    },
+
+    // SEGITIGA
+    {
+        gambar: "🔺",
+        soal: "Rumus luas segitiga adalah...",
+        jawaban: "½ × a × t",
+        opsi: ["a × t", "½ × a × t", "a + b + c"]
+    },
+    {
+        gambar: "🔺",
+        soal: "Jumlah sisi segitiga adalah...",
+        jawaban: "3",
+        opsi: ["2", "3", "4"]
+    },
+
+    // PERSEGI PANJANG
+    {
+        gambar: "▭",
+        soal: "Rumus luas persegi panjang adalah...",
+        jawaban: "p × l",
+        opsi: ["2(p + l)", "p × l", "s²"]
+    },
+    {
+        gambar: "▭",
+        soal: "Rumus keliling persegi panjang adalah...",
+        jawaban: "2(p + l)",
+        opsi: ["p × l", "4s", "2(p + l)"]
+    },
+
+    // LAYANG-LAYANG
+    {
+        gambar: "♦",
+        soal: "Rumus luas layang-layang adalah...",
+        jawaban: "½ × d₁ × d₂",
+        opsi: ["s²", "½ × d₁ × d₂", "a × t"]
+    },
+    {
+        gambar: "♦",
+        soal: "Jumlah sisi layang-layang adalah...",
+        jawaban: "4",
+        opsi: ["3", "4", "5"]
+    },
+
+    // BELAH KETUPAT
+    {
+        gambar: "🔷",
+        soal: "Rumus luas belah ketupat adalah...",
+        jawaban: "½ × d₁ × d₂",
+        opsi: ["s²", "½ × d₁ × d₂", "p × l"]
+    },
+    {
+        gambar: "🔷",
+        soal: "Jumlah sisi belah ketupat adalah...",
+        jawaban: "4",
+        opsi: ["4", "6", "8"]
+    }
+];
+
+let skor = 0;
+let soalSekarang;
+
+function tampilSoal() {
+    soalSekarang = soalData[Math.floor(Math.random() * soalData.length)];
+
+    document.getElementById("gambar").innerText = soalSekarang.gambar;
+    document.getElementById("soal").innerText = soalSekarang.soal;
+
+    let opsiHTML = "";
+    soalSekarang.opsi.forEach(o => {
+        opsiHTML += `<button onclick="cekJawaban('${o}')">${o}</button>`;
+    });
+    document.getElementById("opsi").innerHTML = opsiHTML;
+}
+
+function cekJawaban(pilihan) {
+    if (pilihan === soalSekarang.jawaban) {
+        skor++;
+        document.getElementById("skor").innerText = skor;
+        tampilSoal();
+    } else {
+        alert("❌ Salah!\nSkor kamu: " + skor);
+        skor = 0;
+        document.getElementById("skor").innerText = skor;
+        tampilSoal();
+    }
+}
+
+tampilSoal();
+</script>
+
+</body>
+</html>
